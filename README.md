@@ -155,4 +155,4 @@ To respect third-party licenses and repository size limits, raw third-party data
 
 ## Anonymity & License
 
-This repository is anonymized for double-blind VLDB review (`Anonymous12340`). Code and experimental result tables are released under the MIT License; third-party datasets and pretrained checkpoints remain subject to their respective upstream licenses.
+This repository is anonymized for double-blind peer review (`Anonymous12340`). Code and experimental result tables are released under the MIT License; third-party datasets and pretrained checkpoints remain subject to their respective upstream licenses.
