@@ -1,0 +1,12 @@
+dataset,type,condition,downstream,metric,mean,sd,seeds,failed_seeds,interrupted_seeds
+cpu_act,regression,phi3p5_fp16,xgboost,rmse,53.9948904937746,27.46751121413364,3,0,0
+cpu_act,regression,qwen0p6_fp16,xgboost,rmse,136.33842893672008,27.69960275010371,3,0,0
+cpu_act,regression,qwen0p6_nf4,xgboost,rmse,53.90439336371474,27.54446628308849,3,0,0
+cpu_act,regression,qwen1p7_fp16,xgboost,rmse,54.03563556787338,27.431187109276284,3,0,0
+cpu_act,regression,qwen1p7_nf4,xgboost,rmse,53.98435170949171,27.47643805204466,3,0,0
+cpu_act,regression,qwen4_fp16,xgboost,rmse,54.01740728660797,27.448469395624162,3,0,0
+cpu_act,regression,qwen4_nf4,xgboost,rmse,53.97092328109819,27.487825914655062,3,0,0
+cpu_act,regression,qwen4_trained_fp16,xgboost,rmse,53.98435170949171,27.47643805204466,3,0,0
+cpu_act,regression,qwen4_trained_nf4,xgboost,rmse,53.98435170949171,27.47643805204466,3,0,0
+cpu_act,regression,qwen8_fp16,xgboost,rmse,53.98435170949171,27.47643805204466,3,0,0
+cpu_act,regression,qwen8_nf4,xgboost,rmse,53.90439336371474,27.54446628308849,3,0,0

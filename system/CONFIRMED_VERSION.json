@@ -1,0 +1,57 @@
+{
+  "method": "mandatory public export normalization, Full N3, fixed task expert and half-blend",
+  "N": 5,
+  "effects": {
+    "classification": {
+      "mean": 8.697992066413121,
+      "sources": {
+        "VC1": 4.285936285936287,
+        "VC2": 13.110047846889955
+      },
+      "seeds": {
+        "42": 6.9187420766368195,
+        "123": 10.407025722815199,
+        "456": 8.768208399787348
+      },
+      "f1_pp": 2.0945714519361296
+    },
+    "regression": {
+      "mean": 42.336233286595,
+      "sources": {
+        "VR1": 13.414859158723685,
+        "VR2": 71.2576074144663
+      },
+      "seeds": {
+        "42": 39.93667862885455,
+        "123": 43.485087056422415,
+        "456": 43.58693417450801
+      }
+    }
+  },
+  "scope": "training-difficulty-screened cross-export subgroup",
+  "sources": 4,
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "implementation": {
+    "scripts/export_shift_schema_stability_20261118.py": "80398f80a6ed97076990ba8cbdf5e7e2f3df1d44765de5a0e5bc9fbe7658a328",
+    "configs/export_shift_schema_stability_20261118.json": "d5d390fc9116902273d683ef808fed384a813b307b30c70d01edfc3e15749014",
+    "designs/export_shift_schema_stability_20261118/PLAN.md": "86a96a828b6e7730e78e4397ce9a9824b91cfb86154640d1e582065cbf8bd2f7",
+    "scripts/export_shift_full_pilot_20261118.py": "dee3f3f181dba286e5064b9460d912ec525bda829a23cc9fcf032e59cd83cc7a",
+    "scripts/qualify_export_schema_recovery_20261118.py": "e1b1c1dd3b9ec76103c95df80a183d498204a6b04eefb8694c6ad3a0005f8fda",
+    "configs/export_shift_schema_recovery_full_20261118.json": "a6f9e10bc39bd299ef9e68905b7d4d171d4d19f6298ea5c493a8a69a5dd353fe",
+    "scripts/export_shift_difficulty_full_pilot_20261118.py": "4f4c18510b19707e4af947aa049806046dbb9627a97656ec4ece49a669ede557",
+    "designs/export_shift_schema_recovery_full_20261118/PLAN.md": "6f9dcf60630144b08e1a5e4f4bb711c606ee4e7de23c5da94c5ed91f5c53e89b",
+    "scripts/export_shift_mechanism_20261118.py": "8a5860ac6d880e1d7de0f9d9e2289c82d64e1f6b13273b4e29262bcefca772ac",
+    "scripts/TabPFN_full_expert_20261118.py": "b91e4bc38f04673aeac47997ddb5336111502f664280e39fa5b8f27e771c2aa4",
+    "scripts/TabICL_expert_comparison_20261118.py": "01d18ed144d4f23c55ec519a807eec91941f4047080797e9558e7837a9b74dc8",
+    "scripts/tabicl_local_worker_20261118.py": "51cecbcb3bd2316fcd0aa59714e4e05ea731f7bcaff534a013b544bbf60d0ab6",
+    "scripts/full_novelty_return_runtime_20261117.py": "c578ff01d4c104e30aee873ba46fc70f04b5272fb426da13be8c6bfac901e4a1",
+    "scripts/qualify_training_difficulty_panel_20261118.py": "c9d217932566adb2816292d32b2cd6fe3b82ebdacae1cd37b2dfede162230899",
+    "designs/training_difficulty_panel_20261118/PLAN.md": "355570c4a011f843b19ac4572ef6ad053b56fa66fef90e9c0a3d78b8f3126aa6"
+  },
+  "config_sha256": "d5d390fc9116902273d683ef808fed384a813b307b30c70d01edfc3e15749014",
+  "formal_version_fixed": true
+}

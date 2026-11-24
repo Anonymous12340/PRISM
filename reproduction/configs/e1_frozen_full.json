@@ -1,0 +1,23 @@
+{
+  "id": "e1_current_frozen_full_20261118",
+  "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+  "adapter_path": "<PROJECT_ROOT>/results/task_c_sft_v2_20261104/training/adapter",
+  "LM_max_new_tokens": 1536,
+  "max_primitives": 8,
+  "selection_protocol": "legacy_preserving_fold_v1",
+  "neural_estimators": {"classification": 4, "regression": 8},
+  "limits": {
+    "science_seconds": 14400,
+    "logical_queries": 720,
+    "primary_predictor_fits": 10000,
+    "auxiliary_repair_calls": 1000,
+    "native_generations": 1500,
+    "LM_generations": 600,
+    "neural_context_fits": 300
+  },
+  "checkpoints": {
+    "classification": ["classifier.ckpt", "cf8c519c01eaf1613ee91239006d57b1c806ff5f23ac1aeb1315ba1015210e49"],
+    "regression": ["regressor.ckpt", "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736"]
+  },
+  "gate": {"auc_pp": 0.2, "f1_pp": 0.0, "regression_rmse_percent": 5.0}
+}

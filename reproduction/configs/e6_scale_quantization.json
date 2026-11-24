@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "project_root": "<PROJECT_ROOT>",
+  "registry": "<PROJECT_ROOT>/configs/e2_unified_datasets_20261107.json",
+  "data_dir": "<PROJECT_ROOT>/data/e2_unified_independent_20261107",
+  "output_dir": "<PROJECT_ROOT>/results/e6_core_pressure_20261120",
+  "classical_python": "<PROJECT_ROOT>/tmp/task_c_baselines_20261025/.venv-classical/bin/python",
+  "upstream": "<PROJECT_ROOT>/tmp/task_c_baselines_20261025",
+  "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "folds": 5,
+  "inner_folds": 3,
+  "test_fraction": 0.2,
+  "main_budget": 10,
+  "budgets": [
+    10
+  ],
+  "lm_budget": 10,
+  "unit_physical_limit": 10,
+  "code_prompt_adapter": "fit_apply_v4_compact",
+  "operator_version": "e2_six_family_v1",
+  "menu_limit": 160,
+  "max_plan_operations": 4,
+  "main_downstream": "xgboost",
+  "auxiliary_downstream": "linear",
+  "candidate_timeout": 90,
+  "native_timeout": 180,
+  "preprocessing": {
+    "iqr_multiplier": 1.5,
+    "high_missing_rate": 0.5,
+    "low_variance": 0.01
+  },
+  "model": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0,
+    "tree_method": "hist",
+    "n_jobs": 2,
+    "random_state": 0
+  },
+  "methods": [
+    "raw",
+    "standard",
+    "openfe",
+    "autofeat",
+    "caafe",
+    "llmfe",
+    "classical_clean",
+    "lm_cleaning_simplified",
+    "clean_then_openfe",
+    "one_shot",
+    "without_task",
+    "random_order",
+    "fixed_probe",
+    "no_lm_search",
+    "ours"
+  ],
+  "generation": {
+    "dtype": "float16",
+    "temperature": 0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "max_new_tokens": 1024,
+    "thinking": false
+  },
+  "resources": {
+    "gpu_workers": 4,
+    "cpu_threads_per_worker": 2,
+    "max_calls_formal": 2640
+  },
+  "research_claim": "Frozen unified formal E2; twenty new OpenML tables, three split seeds, true N5/10/20 prefixes.",
+  "readiness_only": false,
+  "planning_scope": "complete_development_only",
+  "revision_readiness": "results/e2_unified_independent_20261107/readiness.json",
+  "data_source": "OpenML",
+  "background_char_limit": 4000,
+  "method_revision": "native-risk-unified-v1",
+  "implementation_patch": "readiness-wiring-v5-probe-handler",
+  "adapter_dependency_dir": "<PROJECT_ROOT>/tmp/tauprism_learning_deps_20261102",
+  "code_output_contract": "optional_statistics_v1",
+  "cleaning_prompt_adapter": "operator_table_v1",
+  "fixed_probe_invalid_fallback": true,
+  "enforce_context_limit": true,
+  "fail_on_method_errors": true,
+  "fail_on_final_fit_errors": true,
+  "native_timeouts": {
+    "openfe": 900,
+    "autofeat": 21600
+  },
+  "native_jobs": {
+    "autofeat": 5
+  },
+  "inference_dtype": "float16",
+  "inference_max_new_tokens": 768,
+  "inference_threads": 2,
+  "field_metadata": {},
+  "require_native_success_before_test": [
+    "openfe",
+    "autofeat",
+    "clean_then_openfe"
+  ],
+  "require_autofeat_success_before_test": true,
+  "datasets": [],
+  "strict_replay_existing_calls": true,
+  "e6_version": "e6_scale_quant_v1",
+  "experiment": "E6",
+  "conditions": [
+    {
+      "id": "qwen0p6_fp16",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-0.6B",
+      "nominal_billions": 0.6,
+      "precision": "fp16",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "50d235a2d48204024a18f7aab42153ccbbcb0da321c05b31607cf377db4ae78f",
+      "quantization": null
+    },
+    {
+      "id": "qwen0p6_nf4",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-0.6B",
+      "nominal_billions": 0.6,
+      "precision": "nf4",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "50d235a2d48204024a18f7aab42153ccbbcb0da321c05b31607cf377db4ae78f",
+      "quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      }
+    },
+    {
+      "id": "qwen1p7_fp16",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-1.7B",
+      "nominal_billions": 1.7,
+      "precision": "fp16",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "da176c3804f8612946aec24c79cdd57ed0b94259ad58920795ff1e46e0be5653",
+      "quantization": null
+    },
+    {
+      "id": "qwen1p7_nf4",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-1.7B",
+      "nominal_billions": 1.7,
+      "precision": "nf4",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "da176c3804f8612946aec24c79cdd57ed0b94259ad58920795ff1e46e0be5653",
+      "quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      }
+    },
+    {
+      "id": "qwen4_fp16",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+      "nominal_billions": 4.0,
+      "precision": "fp16",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "333eecda4abdfbe3198326def72edd02b9b95e2110ebde772736837799b45a2d",
+      "quantization": null
+    },
+    {
+      "id": "qwen4_nf4",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+      "nominal_billions": 4.0,
+      "precision": "nf4",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "333eecda4abdfbe3198326def72edd02b9b95e2110ebde772736837799b45a2d",
+      "quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      }
+    },
+    {
+      "id": "qwen8_fp16",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-8B",
+      "nominal_billions": 8.0,
+      "precision": "fp16",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "facbc9fd017781d8190df7383a71a02a06cbc8bd74dda6a8fdcdebf32a775e79",
+      "quantization": null
+    },
+    {
+      "id": "qwen8_nf4",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-8B",
+      "nominal_billions": 8.0,
+      "precision": "nf4",
+      "trained": false,
+      "panel": "scale",
+      "model_identity": "facbc9fd017781d8190df7383a71a02a06cbc8bd74dda6a8fdcdebf32a775e79",
+      "quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      }
+    },
+    {
+      "id": "qwen4_trained_fp16",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+      "nominal_billions": 4.0,
+      "precision": "fp16",
+      "trained": true,
+      "panel": "deployment",
+      "model_identity": "333eecda4abdfbe3198326def72edd02b9b95e2110ebde772736837799b45a2d",
+      "adapter_identity": "a5e53e21f21a011e0feeaa715566047c6145119609234a670e05306a8a7c4ab3",
+      "quantization": null
+    },
+    {
+      "id": "qwen4_trained_nf4",
+      "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+      "nominal_billions": 4.0,
+      "precision": "nf4",
+      "trained": true,
+      "panel": "deployment",
+      "model_identity": "333eecda4abdfbe3198326def72edd02b9b95e2110ebde772736837799b45a2d",
+      "adapter_identity": "a5e53e21f21a011e0feeaa715566047c6145119609234a670e05306a8a7c4ab3",
+      "quantization": {
+        "load_in_4bit": true,
+        "quant_type": "nf4",
+        "double_quant": true,
+        "compute_dtype": "float16"
+      }
+    },
+    {
+      "id": "phi3p5_fp16",
+      "model_path": "/root/fshare/models/microsoft/Phi-3.5-mini-instruct",
+      "nominal_billions": 3.8,
+      "precision": "fp16",
+      "trained": false,
+      "panel": "family",
+      "model_identity": "50d748cacf59c79a30dac8be87c50a99aba6f5b7f5b06b10fcf45b82e49aa51c",
+      "quantization": null
+    }
+  ],
+  "authorized_gpus": [
+    0,
+    1,
+    5,
+    6,
+    7
+  ],
+  "e7_version": "v2_same_recipe_8b",
+  "selection_protocol": "legacy_preserving_fold_v1",
+  "adapter_path": "<PROJECT_ROOT>/results/task_c_sft_v2_20261104/training/adapter",
+  "weight_variant": "sft",
+  "weight_revision": "frozen_formal_E7_SFT_support_probe",
+  "inference_device": "cuda:0",
+  "forbid_new_native": false,
+  "e6_condition": {
+    "id": "qwen4_sft",
+    "trained": true,
+    "adapter_path": "<PROJECT_ROOT>/results/task_c_sft_v2_20261104/training/adapter"
+  },
+  "frozen_adapter_path": "<PROJECT_ROOT>/results/task_c_sft_v2_20261104/training/adapter"
+}

@@ -1,0 +1,81 @@
+{
+  "time": 1795034252.4486356,
+  "pilot": true,
+  "formal_version_fixed": false,
+  "current_frozen_system": true,
+  "sources": [
+    "credit",
+    "medical",
+    "credit_card",
+    "bike",
+    "student",
+    "parkinsons",
+    "appliances",
+    "air_quality",
+    "residential",
+    "sml2010"
+  ],
+  "seeds": [
+    20261006,
+    20261007,
+    20261008
+  ],
+  "units": 60,
+  "endpoints": 240,
+  "effects": [
+    {
+      "task": "classification",
+      "method": "Full_neural_experts",
+      "mean": 2.1456307115621067,
+      "sd": 1.0910474508660404,
+      "positive_units": 9,
+      "total_units": 9,
+      "F1_gain_pp_mean": -4.692117958271429
+    },
+    {
+      "task": "classification",
+      "method": "direct_neural_reference",
+      "mean": 2.2779191901324936,
+      "sd": 1.151108967864884,
+      "positive_units": 9,
+      "total_units": 9,
+      "F1_gain_pp_mean": -4.898633476635696
+    },
+    {
+      "task": "classification",
+      "method": "fixed_blend_reference",
+      "mean": 1.9896036947813327,
+      "sd": 0.7817881249813129,
+      "positive_units": 9,
+      "total_units": 9,
+      "F1_gain_pp_mean": -3.0126756882049284
+    },
+    {
+      "task": "regression",
+      "method": "Full_neural_experts",
+      "mean": 12.290421213275565,
+      "sd": 14.9810112386099,
+      "positive_units": 45,
+      "total_units": 51
+    },
+    {
+      "task": "regression",
+      "method": "direct_neural_reference",
+      "mean": 6.956066640100854,
+      "sd": 38.575595933327605,
+      "positive_units": 41,
+      "total_units": 51
+    },
+    {
+      "task": "regression",
+      "method": "fixed_blend_reference",
+      "mean": 9.01535817918431,
+      "sd": 16.801219825106465,
+      "positive_units": 47,
+      "total_units": 51
+    }
+  ],
+  "old_e1_full_not_reused": true,
+  "historical_test_loaded": false,
+  "first_engineering_failure_preserved": true
+}

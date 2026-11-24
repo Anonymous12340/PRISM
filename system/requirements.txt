@@ -1,0 +1,19 @@
+# Core Python & Tabular ML dependencies for PRISM (TaskDQ Frozen System)
+# Verified on Python 3.12 + Linux + CUDA (RTX 4090)
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.5
+xgboost>=2.0
+joblib>=1.4
+# Local LLM Planner (Qwen3-4B / NF4 quantization)
+torch>=2.3
+transformers>=4.45
+accelerate>=0.34
+bitsandbytes>=0.43
+# Frozen Neural Prior Experts (Stage b/c)
+tabpfn>=2.0
+tabicl
+# Optional baseline packages (OpenFE / AutoFeat)
+# openfe
+# autofeat

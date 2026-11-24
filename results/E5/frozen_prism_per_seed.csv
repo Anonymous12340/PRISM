@@ -1,0 +1,7 @@
+dataset,seed,task,method,status,rmse,auc,f1
+telco_churn,42,classification,current_Full,passed,,0.8365534924754039,0.5805084745762712
+telco_churn,123,classification,current_Full,passed,,0.8523301226326028,0.6033057851239669
+telco_churn,456,classification,current_Full,passed,,0.8553430565802168,0.6180257510729614
+retinopathy,42,classification,current_Full,passed,,0.8186095931997571,0.7217391304347827
+retinopathy,123,classification,current_Full,passed,,0.8186095931997571,0.7217391304347827
+retinopathy,456,classification,current_Full,passed,,0.8186095931997571,0.7217391304347827

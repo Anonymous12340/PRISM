@@ -1,0 +1,144 @@
+{
+  "system_name": "PRISM (Planned Repair and In-Context Synthesis for Tabular Machine Learning)",
+  "frozen_version": "export_shift_schema_stability_20261118 (CONFIRMED_VERSION.json, formal_version_fixed=true)",
+  "experiments": {
+    "E1": {
+      "description": "Shared-table multi-task evaluation (10 tables, 20 endpoints, 3 seeds: 20261006-20261008)",
+      "historical_baselines": {
+        "methods": [
+          "raw_shared",
+          "standard"
+        ],
+        "server_source": "results/e1_final_system_20261108/summary/mean_sd.csv"
+      },
+      "frozen_system_rerun": {
+        "methods": [
+          "original_Full",
+          "Full_neural_experts",
+          "direct_neural_reference",
+          "fixed_blend_reference"
+        ],
+        "server_source": "results/e1_current_frozen_full_20261118/deliverables/SCORE_REPORT.csv"
+      }
+    },
+    "E2": {
+      "description": "Clean regression (4 tables) & Composite export-corrupted classification (4 tables), N=5/10/20, seeds 42/123/456",
+      "historical_baselines": {
+        "methods": [
+          "raw",
+          "standard",
+          "autofeat",
+          "caafe",
+          "llmfe",
+          "classical_clean",
+          "lm_cleaning_simplified",
+          "clean_then_openfe",
+          "old_Full"
+        ],
+        "server_source_clean_reg": "results/e2_unified_independent_20261107 (aggregated in results/e2_frozen_system_20261118/deliverables/summary.csv)",
+        "server_source_composite_cls": "results/e2_composite_four_class_20261118/deliverables/summary.csv"
+      },
+      "frozen_system_rerun": {
+        "methods": [
+          "ours"
+        ],
+        "server_source_clean_reg": "results/e2_frozen_system_20261118/deliverables/summary.csv",
+        "server_source_composite_cls": "results/e2_composite_four_class_20261118/deliverables/summary.csv"
+      }
+    },
+    "E3": {
+      "description": "Controlled error injection (airline_satisfaction, diamonds; 5 error types x 3 rates; 6 methods; N=10; seeds 42/123/456)",
+      "frozen_system_and_baselines": {
+        "methods": [
+          "raw",
+          "standard",
+          "caafe",
+          "llmfe",
+          "classical_clean",
+          "ours"
+        ],
+        "server_source": "results/e3_four_dataset_20261119/summary/downstream_mean_sd.csv"
+      }
+    },
+    "E4": {
+      "description": "Core component ablation (german_credit, default_credit, cpu_act; XGBoost primary; seeds 42/123/456)",
+      "frozen_system_ablation": {
+        "variants": [
+          "full",
+          "without_fusion",
+          "without_lm",
+          "without_native_expert",
+          "rule_only",
+          "without_expert"
+        ],
+        "server_source": "results/e4_core_ablation_20261119/summary/mean_sd.csv"
+      }
+    },
+    "E5": {
+      "description": "Cross-domain authentic dirty transfer (telco_churn, retinopathy; XGBoost AUC; seeds 42/123/456)",
+      "historical_baselines": {
+        "methods": [
+          "raw",
+          "standard",
+          "openfe",
+          "autofeat",
+          "caafe",
+          "llmfe",
+          "no_lm_search"
+        ],
+        "server_source": "deliverables/e5_telco_retinopathy_three_seed_20261111/all15_per_seed.csv"
+      },
+      "frozen_system_rerun": {
+        "methods": [
+          "FULL"
+        ],
+        "server_source": "results/e5_current_full_rerun_20261119/deliverables.csv"
+      }
+    },
+    "E6": {
+      "description": "Planner parameter scale, 4-bit NF4 quantization, and post-training audit (cpu_act; 11 conditions; seeds 42/123/456)",
+      "frozen_system_audit": {
+        "server_source": "results/e6_core_pressure_20261120/test_summary.csv"
+      }
+    },
+    "E7": {
+      "description": "Quality-cost trade-off (qsar-biodeg, cpu_act, houses; 4 methods: ours, standard, llmfe, clean_then_openfe; N=5; seeds 42/123/456)",
+      "frozen_system_and_baselines": {
+        "server_source": "results/e7_system_quality_cost_20261120_retry3/report/quality_cost_summary.csv"
+      }
+    }
+  },
+  "filtered_row_counts": {
+    "E1": {
+      "historical_baselines_rows": 40
+    },
+    "E2": {
+      "reg_summary": 120,
+      "reg_seeds": 360,
+      "cls_summary": 216,
+      "cls_seeds": 648
+    },
+    "E3": {
+      "mean_sd": 180,
+      "per_seed": 810
+    },
+    "E4": {
+      "mean_sd": 14,
+      "per_seed": 42
+    },
+    "E5": {
+      "historical_baselines": 42,
+      "frozen_prism": 6
+    },
+    "E6": {
+      "summary": 11,
+      "per_seed": 33,
+      "proposal_quality": 132
+    },
+    "E7": {
+      "summary": 12,
+      "quality_seeds": 36,
+      "cost_seeds": 36
+    }
+  }
+}

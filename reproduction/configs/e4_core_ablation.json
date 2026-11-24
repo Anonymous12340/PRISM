@@ -1,0 +1,126 @@
+{
+  "experiment": "E4",
+  "reference_release": "taskdq_e2_final_20261108",
+  "reference_source": "releases/taskdq_e2_final_20261108/source",
+  "schema_version": 1,
+  "project_root": "..",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "inner_folds": 3,
+  "main_budget": 10,
+  "cohort_limit": 5000,
+  "sampling_seed": 20261108,
+  "test_fraction": 0.2,
+  "output_dir": "results/e4_taskbook_current_20261119",
+  "data_dir": "data/e4_formal_20261108",
+  "source_e3_metadata": "results/e3_formal_20261108/dataset_metadata.json",
+  "max_physical_calls": 180,
+  "scheduled_call_limit": 180,
+  "per_arm_call_limit": 10,
+  "server": "rtx4090",
+  "gpus": [
+    1,
+    5
+  ],
+  "variants": [
+    "full",
+    "anonymous_columns",
+    "without_task",
+    "without_profile",
+    "randomized_order",
+    "without_feedback_iteration"
+  ],
+  "lm_variants": [
+    "full",
+    "anonymous_columns",
+    "without_task",
+    "without_profile",
+    "without_feedback_iteration"
+  ],
+  "datasets": [
+    {
+      "name": "bank_marketing",
+      "type": "classification",
+      "openml_id": 1461,
+      "openml_version": 1,
+      "raw_dir": "data/e2_openml_main_20261105/raw/1461",
+      "previous_split": "data/e2_openml_main_20261105/prepared/bank_marketing/42/split.json",
+      "target": "y",
+      "positive": "2",
+      "exclude": [
+        "duration"
+      ],
+      "column_mapping": {
+        "V1": "age",
+        "V2": "job",
+        "V3": "marital",
+        "V4": "education",
+        "V5": "default",
+        "V6": "balance",
+        "V7": "housing",
+        "V8": "loan",
+        "V9": "contact",
+        "V10": "day_of_month",
+        "V11": "month",
+        "V12": "duration",
+        "V13": "campaign",
+        "V14": "pdays",
+        "V15": "previous",
+        "V16": "poutcome",
+        "Class": "y"
+      },
+      "unit_factors": {
+        "balance": 100.0
+      },
+      "unit_description": {
+        "balance": "euros to euro cents"
+      },
+      "task_description": "根据营销发生前可用客户与历史接触字段预测源订阅分类标签；duration排除；正类固定为源Class=2，不根据结果改编码。",
+      "e3_cohort_registry": "results/e3_formal_20261108/dataset_metadata.json",
+      "common_background": "这些记录来自金融机构的电话营销联系，输入描述客户属性以及联系和历史营销情况；每行是一条联系记录。",
+      "public_task": "预测本次记录的订阅分类标签，正类沿用原始标签代码2；事后通话持续时长不作为输入。",
+      "background_source_quote": "The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls."
+    },
+    {
+      "name": "diamonds",
+      "type": "regression",
+      "openml_id": 42225,
+      "openml_version": 1,
+      "raw_dir": "data/e2_unified_independent_20261107/raw/42225",
+      "previous_split": "data/e2_unified_independent_20261107/prepared/diamonds/42/split.json",
+      "target": "price",
+      "exclude": [],
+      "column_mapping": {},
+      "positive_numeric_columns": [
+        "carat",
+        "depth",
+        "table",
+        "x",
+        "y",
+        "z",
+        "price"
+      ],
+      "unit_factors": {
+        "x": 1000.0,
+        "y": 1000.0,
+        "z": 1000.0
+      },
+      "unit_description": {
+        "x": "millimetres to micrometres",
+        "y": "millimetres to micrometres",
+        "z": "millimetres to micrometres"
+      },
+      "task_description": "根据钻石属性预测美元价格；目标price不作为输入特征。",
+      "e3_cohort_registry": "results/e3_formal_20261108/dataset_metadata.json",
+      "common_background": "这些记录描述宝石的连续测量属性和等级类别；每行是一件物品，输入字段不包含目标。",
+      "public_task": "根据物品属性预测以美元计价的销售价格。",
+      "background_source_quote": "This classic dataset contains the prices and other attributes of almost 54,000 diamonds."
+    }
+  ],
+  "fairness": "Separate arm histories/repair-column budgets; common immutable fitting caches only for identical source/fold/spec/settings. All 54 choices frozen before any of 6 sealed tests.",
+  "runtime_status": "authorized_preparing_no_model_calls_yet",
+  "weights": "unchanged frozen SFT then GRPO step6; all arms same hardware and BF16 greedy inference"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "e2_frozen_system_20261118",
+  "model_path": "/root/fshare/models/Qwen/Qwen3-4B",
+  "adapter_path": "<PROJECT_ROOT>/results/task_c_sft_v2_20261104/training/adapter",
+  "LM_max_new_tokens": 1536,
+  "max_primitives": 8,
+  "selection_protocol": "legacy_preserving_fold_v1",
+  "seed": 42,
+  "neural_estimators": {
+    "classification": 4,
+    "regression": 8
+  },
+  "limits": {
+    "science_seconds": 21600,
+    "logical_queries": 192,
+    "primary_predictor_fits": 6000,
+    "auxiliary_repair_calls": 640,
+    "native_generations": 384,
+    "LM_generations": 144,
+    "neural_context_fits": 96
+  },
+  "checkpoints": {
+    "classification": [
+      "classifier.ckpt",
+      "cf8c519c01eaf1613ee91239006d57b1c806ff5f23ac1aeb1315ba1015210e49"
+    ],
+    "regression": [
+      "regressor.ckpt",
+      "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736"
+    ]
+  },
+  "gate": {
+    "auc_pp": 5.0,
+    "f1_pp": 0.0,
+    "rmse_percent": 5.0,
+    "sources_positive_per_task": 2,
+    "vs_V1_auc_pp": 0.2,
+    "vs_V1_regression_nondecreasing": true
+  },
+  "allowed_gpus": [
+    1,
+    5,
+    6,
+    7
+  ],
+  "tabicl": {
+    "classification": [
+      "classifier.ckpt",
+      "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0",
+      "tabicl-classifier-v2-20260212.ckpt"
+    ],
+    "regression": [
+      "regressor.ckpt",
+      "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a",
+      "tabicl-regressor-v2-20260212.ckpt"
+    ]
+  }
+}
