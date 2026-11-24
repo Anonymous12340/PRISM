@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.12-informational)](#)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](#)
 
-Official anonymous artifact repository for the VLDB submission:
+Official implementation and reproducibility package for:
 > **PRISM: Orchestrating Contract Normalization and Multi-Expert Candidate Fusion for Task-Aware Tabular Data Quality**
 
 ---
