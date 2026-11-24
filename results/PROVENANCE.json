@@ -1,5 +1,5 @@
 {
-  "system_name": "PRISM (Planned Repair and In-Context Synthesis for Tabular Machine Learning)",
+  "system_name": "PRISM: Orchestrating Contract Normalization and Multi-Expert Candidate Fusion for Task-Aware Tabular Data Quality",
   "frozen_version": "export_shift_schema_stability_20261118 (CONFIRMED_VERSION.json, formal_version_fixed=true)",
   "experiments": {
     "E1": {
@@ -120,7 +120,7 @@
     },
     "E3": {
       "mean_sd": 180,
-      "per_seed": 810
+      "per_seed": 540
     },
     "E4": {
       "mean_sd": 14,
